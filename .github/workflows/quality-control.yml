@@ -1,0 +1,32 @@
+name: QC Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  checks:
+    name: QC Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install
+        run: npm install
+
+      - name: ESLint checks
+        run: npm run check-lint
+
+      - name: Prettier checks
+        run: npm run check-format
+
+      - name: TSC checks
+        run: npm run check-tsc
