@@ -1,25 +1,16 @@
 {
+	"extends": "./node_modules/@tsconfig/node20/tsconfig.json",
 	"compilerOptions": {
-		"outDir": "./dist",
-		"rootDir": "./src",
-		"module": "nodenext",
-		"moduleDetection": "force",
-		"target": "es2022",
-
-		// other best practice configs
-		"moduleResolution": "nodenext",
-		"strict": true,
-		"noImplicitAny": false,
-		"removeComments": false,
-		"emitDecoratorMetadata": true,
-		"composite": true,
-		"experimentalDecorators": true,
-		"strictPropertyInitialization": false,
-		"resolveJsonModule": true,
-		"sourceMap": true,
-		"isolatedModules": false,
-		"declaration": true
+		/* Visit https://aka.ms/tsconfig.json to read more about this file */
+		"outDir": "lib",
+		"rootDir": ".",
+		"declaration": true,
+		"declarationDir": "lib",
+		"resolveJsonModule": true
 	},
-	"exclude": ["node_modules", "**/__tests__"],
-	"include": ["./src"]
+	"include": ["src/**/*", "tests/**/*"],
+	"exclude": ["node_modules"],
+	"ts-node": {
+		"files": true
+	}
 }

@@ -1,88 +1,75 @@
 {
-  "name": "@whisthub/agenda",
-  "version": "0.0.0",
-  "type": "module",
-  "description": "Light weight job scheduler for Node.js",
-  "exports": "./dist/index.js",
-  "types": "dist/index.d.ts",
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist"
-  ],
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "scripts": {
-    "release": "npm run build && standard-version",
-    "prepublishOnly": "npm run build",
-    "build": "tsc",
-    "test": "npm run mocha",
-    "lint": "eslint src",
-    "lint-fix": "eslint src --fix",
-    "mocha": "mocha --reporter spec -b",
-    "mocha-coverage": "nyc mocha --reporter spec -b",
-    "mocha-debug": "DEBUG=agenda:**,-agenda:internal:** mocha --reporter spec -b",
-    "mocha-debug-internal": "DEBUG=agenda:internal:** mocha --reporter spec -b",
-    "mocha-debug-all": "DEBUG=agenda:** mocha --reporter spec -b",
-    "docs": "typedoc --out docs/agenda/6.x src/index.ts"
-  },
-  "config": {
-    "blanket": {
-      "pattern": "lib",
-      "data-cover-never": "node_modules"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/whisthub/agenda"
-  },
-  "keywords": [
-    "job",
-    "jobs",
-    "cron",
-    "delayed",
-    "scheduler",
-    "runner"
-  ],
-  "author": "Sebastiaan Marynissen <info@whisthub.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/whisthub/agenda/issues"
-  },
-  "dependencies": {
-    "cron-parser": "^4",
-    "date.js": "~0.3.3",
-    "debug": "~4",
-    "human-interval": "~2",
-    "luxon": "^3"
-  },
-  "peerDependencies": {
-    "mongodb": ">=4"
-  },
-  "devDependencies": {
-    "@hokify/eslint-config": "^2.3.8",
-    "@istanbuljs/nyc-config-typescript": "^1.0.2",
-    "@types/chai": "^4.3.4",
-    "@types/debug": "^4.1.7",
-    "@types/human-interval": "^1.0.0",
-    "@types/luxon": "^3.1.0",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "^18.11.12",
-    "@types/sinon": "^10.0.13",
-    "chai": "^4.3.7",
-    "delay": "^6.0.0",
-    "eslint": "^8.29.0",
-    "mocha": "10.1.0",
-    "mongodb": "^6.3.0",
-    "mongodb-memory-server": "^9.1.6",
-    "nyc": "^15.1.0",
-    "prettier": "^2.8.1",
-    "sinon": "15.0.0",
-    "standard-version": "^9.5.0",
-    "tsx": "^4.7.0",
-    "typedoc": "^0.23.21",
-    "typescript": "^4.9.4"
-  }
+	"name": "@lesjoursfr/agenda",
+	"version": "0.0.0",
+	"description": "Light weight job scheduler for Node.js",
+	"license": "MIT",
+	"repository": "lesjoursfr/agenda",
+	"homepage": "https://github.com/lesjoursfr/audio-waveform#readme",
+	"bugs": {
+		"url": "https://github.com/lesjoursfr/audio-waveform/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"engines": {
+		"node": "20.x || 22.x"
+	},
+	"keywords": [
+		"job",
+		"jobs",
+		"cron",
+		"delayed",
+		"scheduler",
+		"runner"
+	],
+	"main": "./lib/index.js",
+	"types": "./lib/index.d.ts",
+	"files": [
+		"lib/**/*",
+		"src/**/*"
+	],
+	"scripts": {
+		"freshlock": "rm -rf node_modules/ && rm .yarn/install-state.gz && rm yarn.lock && yarn",
+		"check-lint": "eslint",
+		"check-format": "prettier --check .",
+		"check-tsc": "tsc --noEmit",
+		"lint": "eslint --fix",
+		"format": "prettier --write .",
+		"build": "tsc -p tsconfig.build.json",
+		"test": "mocha",
+		"typedoc": "typedoc src/index.ts --out ./docs && prettier --write ./docs --ignore-path .gitignore"
+	},
+	"dependencies": {
+		"@lesjoursfr/date": "^1.0.0",
+		"@lesjoursfr/human-interval": "^1.0.0",
+		"cron-parser": "^4.9.0",
+		"debug": "^4.3.7",
+		"luxon": "^3.5.0"
+	},
+	"peerDependencies": {
+		"mongodb": ">=6"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.13.0",
+		"@tsconfig/node20": "^20.1.4",
+		"@types/debug": "^4.1.12",
+		"@types/human-interval": "^1.0.2",
+		"@types/luxon": "^3.4.2",
+		"@types/mocha": "^10.0.9",
+		"@types/node": "^22.8.5",
+		"@types/sinon": "^17.0.3",
+		"eslint": "^9.13.0",
+		"eslint-config-prettier": "^9.1.0",
+		"globals": "^15.11.0",
+		"mocha": "^10.7.3",
+		"mongodb": "^6.10.0",
+		"mongodb-memory-server": "^10.1.2",
+		"prettier": "^3.3.3",
+		"sinon": "^19.0.2",
+		"ts-node": "^10.9.2",
+		"typedoc": "^0.26.10",
+		"typescript": "^5.6.3",
+		"typescript-eslint": "^8.12.2"
+	},
+	"packageManager": "yarn@4.5.1"
 }
