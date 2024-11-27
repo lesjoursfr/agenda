@@ -13,17 +13,17 @@
 This was originally a fork of agenda.js,
 it differs from the original version in following points:
 
--   Complete rewrite in Typescript (fully typed!)
--   [mongodb@6](https://www.npmjs.com/package/mongodb) driver
--   Supports mongoDB sharding by name
--   touch() can have an optional progress parameter (0-100)
--   Bugfixes and improvements for locking & job processing (concurrency, lockLimit,..)
--   Breaking change: define() config paramter moved from 2nd position to 3rd
--   getRunningStats()
--   automatically waits for agenda to be connected before calling any database operations
--   uses a database abstraction layer behind the scene
--   does not create a database index by default, you can set `ensureIndex: true` when initializing Agenda
-    or run manually:
+- Complete rewrite in Typescript (fully typed!)
+- [mongodb@6](https://www.npmjs.com/package/mongodb) driver
+- Supports mongoDB sharding by name
+- touch() can have an optional progress parameter (0-100)
+- Bugfixes and improvements for locking & job processing (concurrency, lockLimit,..)
+- Breaking change: define() config paramter moved from 2nd position to 3rd
+- getRunningStats()
+- automatically waits for agenda to be connected before calling any database operations
+- uses a database abstraction layer behind the scene
+- does not create a database index by default, you can set `ensureIndex: true` when initializing Agenda
+  or run manually:
 
 ```
 db.agendaJobs.ensureIndex({
@@ -37,15 +37,15 @@ db.agendaJobs.ensureIndex({
 
 # Agenda offers
 
--   Minimal overhead. Agenda aims to keep its code base small.
--   Mongo backed persistence layer.
--   Promises based API.
--   Scheduling with configurable priority, concurrency, and repeating.
--   Scheduling via cron or human readable syntax.
--   Event backed job queue that you can hook into.
--   [Agendash](https://github.com/agenda/agendash): optional standalone web-interface.
--   [Agenda-rest](https://github.com/agenda/agenda-rest): optional standalone REST API.
--   [inversify-agenda](https://github.com/lautarobock/inversify-agenda) - Some utilities for the development of agenda workers with Inversify
+- Minimal overhead. Agenda aims to keep its code base small.
+- Mongo backed persistence layer.
+- Promises based API.
+- Scheduling with configurable priority, concurrency, and repeating.
+- Scheduling via cron or human readable syntax.
+- Event backed job queue that you can hook into.
+- [Agendash](https://github.com/agenda/agendash): optional standalone web-interface.
+- [Agenda-rest](https://github.com/agenda/agenda-rest): optional standalone REST API.
+- [inversify-agenda](https://github.com/lautarobock/inversify-agenda) - Some utilities for the development of agenda workers with Inversify
 
 ### Feature Comparison
 
@@ -152,20 +152,20 @@ mapped to a database collection and load the jobs from within.
 
 ## Table of Contents
 
--   [Configuring an agenda](#configuring-an-agenda)
--   [Agenda Events](#agenda-events)
--   [Defining job processors](#defining-job-processors)
--   [Creating jobs](#creating-jobs)
--   [Managing jobs](#managing-jobs)
--   [Starting the job processor](#starting-the-job-processor)
--   [Multiple job processors](#multiple-job-processors)
--   [Manually working with jobs](#manually-working-with-a-job)
--   [Job Queue Events](#job-queue-events)
--   [Frequently asked questions](#frequently-asked-questions)
--   [Example Project structure](#example-project-structure)
--   [Known Issues](#known-issues)
--   [Debugging Issues](#debugging-issues)
--   [Acknowledgements](#acknowledgements)
+- [Configuring an agenda](#configuring-an-agenda)
+- [Agenda Events](#agenda-events)
+- [Defining job processors](#defining-job-processors)
+- [Creating jobs](#creating-jobs)
+- [Managing jobs](#managing-jobs)
+- [Starting the job processor](#starting-the-job-processor)
+- [Multiple job processors](#multiple-job-processors)
+- [Manually working with jobs](#manually-working-with-a-job)
+- [Job Queue Events](#job-queue-events)
+- [Frequently asked questions](#frequently-asked-questions)
+- [Example Project structure](#example-project-structure)
+- [Known Issues](#known-issues)
+- [Debugging Issues](#debugging-issues)
+- [Acknowledgements](#acknowledgements)
 
 ## Configuring an agenda
 
@@ -380,10 +380,10 @@ By default it is `{ nextRunAt: 1, priority: -1 }`, which obeys a first in first 
 
 An instance of an agenda will emit the following events:
 
--   `ready` - called when Agenda mongo connection is successfully opened and indices created.
-    If you're passing agenda an existing connection, you shouldn't need to listen for this, as `agenda.start()` will not resolve until indices have been created.
-    If you're using the `db` options, or call `database`, then you may still need to listen for the `ready` event before saving jobs. `agenda.start()` will still wait for the connection to be opened.
--   `error` - called when Agenda mongo connection process has thrown an error
+- `ready` - called when Agenda mongo connection is successfully opened and indices created.
+  If you're passing agenda an existing connection, you shouldn't need to listen for this, as `agenda.start()` will not resolve until indices have been created.
+  If you're using the `db` options, or call `database`, then you may still need to listen for the `ready` event before saving jobs. `agenda.start()` will still wait for the connection to be opened.
+- `error` - called when Agenda mongo connection process has thrown an error
 
 ```js
 await agenda.start();
@@ -405,13 +405,13 @@ synchronous or returns a Promise, you may omit `done` from the signature.
 `options` is an optional argument which can overwrite the defaults. It can take
 the following:
 
--   `concurrency`: `number` maximum number of that job that can be running at once (per instance of agenda)
--   `lockLimit`: `number` maximum number of that job that can be locked at once (per instance of agenda)
--   `lockLifetime`: `number` interval in ms of how long the job stays locked for (see [multiple job processors](#multiple-job-processors) for more info).
-    A job will automatically unlock once a returned promise resolves/rejects (or if `done` is specified in the signature and `done()` is called).
--   `priority`: `(lowest|low|normal|high|highest|number)` specifies the priority
-    of the job. Higher priority jobs will run first. See the priority mapping
-    below
+- `concurrency`: `number` maximum number of that job that can be running at once (per instance of agenda)
+- `lockLimit`: `number` maximum number of that job that can be locked at once (per instance of agenda)
+- `lockLifetime`: `number` interval in ms of how long the job stays locked for (see [multiple job processors](#multiple-job-processors) for more info).
+  A job will automatically unlock once a returned promise resolves/rejects (or if `done` is specified in the signature and `done()` is called).
+- `priority`: `(lowest|low|normal|high|highest|number)` specifies the priority
+  of the job. Higher priority jobs will run first. See the priority mapping
+  below
 
 Priority mapping:
 
@@ -715,7 +715,7 @@ Ensure that only one instance of this job exists with the specified properties
 `options` is an optional argument which can overwrite the defaults. It can take
 the following:
 
--   `insertOnly`: `boolean` will prevent any properties from persisting if the job already exists. Defaults to false.
+- `insertOnly`: `boolean` will prevent any properties from persisting if the job already exists. Defaults to false.
 
 ```js
 job.unique({ "data.type": "active", "data.userId": "123", nextRunAt: date });
@@ -803,8 +803,8 @@ agenda.define("super long job", async (job) => {
 
 An instance of an agenda will emit the following events:
 
--   `start` - called just before a job starts
--   `start:job name` - called just before the specified job starts
+- `start` - called just before a job starts
+- `start:job name` - called just before the specified job starts
 
 ```js
 agenda.on("start", (job) => {
@@ -812,8 +812,8 @@ agenda.on("start", (job) => {
 });
 ```
 
--   `complete` - called when a job finishes, regardless of if it succeeds or fails
--   `complete:job name` - called when a job finishes, regardless of if it succeeds or fails
+- `complete` - called when a job finishes, regardless of if it succeeds or fails
+- `complete:job name` - called when a job finishes, regardless of if it succeeds or fails
 
 ```js
 agenda.on("complete", (job) => {
@@ -821,8 +821,8 @@ agenda.on("complete", (job) => {
 });
 ```
 
--   `success` - called when a job finishes successfully
--   `success:job name` - called when a job finishes successfully
+- `success` - called when a job finishes successfully
+- `success:job name` - called when a job finishes successfully
 
 ```js
 agenda.on("success:send email", (job) => {
@@ -830,8 +830,8 @@ agenda.on("success:send email", (job) => {
 });
 ```
 
--   `fail` - called when a job throws an error
--   `fail:job name` - called when a job throws an error
+- `fail` - called when a job throws an error
+- `fail:job name` - called when a job throws an error
 
 ```js
 agenda.on("fail:send email", (err, job) => {
@@ -1102,18 +1102,18 @@ If you think you have encountered a bug, please feel free to report it here:
 
 Please provide us with as much details as possible such as:
 
--   Agenda version
--   Environment (OSX, Linux, Windows, etc)
--   Small description of what happened
--   Any relevant stack track
--   Agenda logs (see below)
+- Agenda version
+- Environment (OSX, Linux, Windows, etc)
+- Small description of what happened
+- Any relevant stack track
+- Agenda logs (see below)
 
 #### To turn on logging, please set your DEBUG env variable like so:
 
--   OSX: `DEBUG="agenda:*" ts-node src/index.ts`
--   Linux: `DEBUG="agenda:*" ts-node src/index.ts`
--   Windows CMD: `set DEBUG=agenda:*`
--   Windows PowerShell: `$env:DEBUG = "agenda:*"`
+- OSX: `DEBUG="agenda:*" ts-node src/index.ts`
+- Linux: `DEBUG="agenda:*" ts-node src/index.ts`
+- Windows CMD: `set DEBUG=agenda:*`
+- Windows PowerShell: `$env:DEBUG = "agenda:*"`
 
 While not necessary, attaching a text file with this debug information would
 be extremely useful in debugging certain issues and is encouraged.
@@ -1258,5 +1258,5 @@ await job.save();
 
 # Acknowledgements
 
--   Agenda was originally created by [@rschmukler](https://github.com/rschmukler).
--   [Agendash](https://github.com/agenda/agendash) was originally created by [@joeframbach](https://github.com/joeframbach).
+- Agenda was originally created by [@rschmukler](https://github.com/rschmukler).
+- [Agendash](https://github.com/agenda/agendash) was originally created by [@joeframbach](https://github.com/joeframbach).
