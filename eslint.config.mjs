@@ -29,6 +29,7 @@ export default tseslint.config(
       ".yarn/*",
       "tests/fixtures/some-job-definition-js.js",
       "lib/*",
+      "docs/*",
     ],
   },
   {
