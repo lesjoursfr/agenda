@@ -4,7 +4,7 @@
 # @lesjoursfr/agenda
 
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/hokify/agenda@master/agendats.png" alt="Agenda TS" width="100" height="100">
+  <img src="agendats.png" alt="Agenda TS" width="100" height="100">
 </p>
 <p align="center">
   A light-weight job scheduling library for Node.js
@@ -145,7 +145,7 @@ agenda.define(
 
 # Full documentation
 
-See also https://hokify.github.io/agenda/
+See also https://lesjoursfr.github.io/agenda/
 
 Agenda's basic control structure is an instance of an agenda. Agenda's are
 mapped to a database collection and load the jobs from within.
@@ -1098,7 +1098,7 @@ Fire up an instance that processes video-processing/image-processing jobs. Good 
 
 If you think you have encountered a bug, please feel free to report it here:
 
-[Submit Issue](https://github.com/hokify/agenda/issues/new)
+[Submit Issue](https://github.com/lesjoursfr/agenda/issues/new)
 
 Please provide us with as much details as possible such as:
 
