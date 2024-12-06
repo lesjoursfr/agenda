@@ -3,7 +3,10 @@
 	"version": "1.0.1",
 	"description": "Light weight job scheduler for Node.js",
 	"license": "MIT",
-	"repository": "lesjoursfr/agenda",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lesjoursfr/agenda.git"
+	},
 	"homepage": "https://github.com/lesjoursfr/audio-waveform#readme",
 	"bugs": {
 		"url": "https://github.com/lesjoursfr/audio-waveform/issues"
