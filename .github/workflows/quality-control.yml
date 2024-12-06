@@ -42,8 +42,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: microsoft/playwright-github-action@v1
-
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -52,5 +50,8 @@ jobs:
       - name: Install
         run: npm install
 
+      - name: Build project
+        run: npm run build
+
       - name: Run tests
-        run: npx mocha
+        run: npm run test
