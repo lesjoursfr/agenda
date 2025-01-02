@@ -43,8 +43,8 @@
 		"typedoc": "typedoc src/index.ts --out ./docs && prettier --write ./docs --ignore-path .gitignore"
 	},
 	"dependencies": {
-		"@lesjoursfr/date": "^1.0.1",
-		"@lesjoursfr/human-interval": "^1.0.1",
+		"@lesjoursfr/date": "^1.0.2",
+		"@lesjoursfr/human-interval": "^1.0.2",
 		"cron-parser": "^4.9.0",
 		"debug": "^4.4.0",
 		"luxon": "^3.5.0",
@@ -56,20 +56,20 @@
 		"@types/debug": "^4.1.12",
 		"@types/luxon": "^3.4.2",
 		"@types/mocha": "^10.0.10",
-		"@types/node": "^22.10.2",
+		"@types/node": "^22.10.3",
 		"@types/sinon": "^17.0.3",
 		"eslint": "^9.17.0",
 		"eslint-config-prettier": "^9.1.0",
 		"globals": "^15.14.0",
 		"mocha": "^11.0.1",
 		"mongodb": "^6.12.0",
-		"mongodb-memory-server": "^10.1.2",
+		"mongodb-memory-server": "^10.1.3",
 		"prettier": "^3.4.2",
 		"sinon": "^19.0.2",
 		"ts-node": "^10.9.2",
 		"typedoc": "^0.27.6",
 		"typescript": "^5.7.2",
-		"typescript-eslint": "^8.18.2"
+		"typescript-eslint": "^8.19.0"
 	},
 	"packageManager": "yarn@4.6.0"
 }
