@@ -1,12 +1,10 @@
 import date from "@lesjoursfr/date";
 import humanInterval from "@lesjoursfr/human-interval";
-import cronParser from "cron-parser";
+import { CronExpressionParser } from "cron-parser";
 import debug from "debug";
 import { DateTime } from "luxon";
 import type { IJobParameters } from "../interfaces";
 import { isValidDate } from "./is-valid-date";
-
-const { parseExpression } = cronParser;
 
 const log = debug("agenda:nextRunAt");
 
@@ -38,12 +36,12 @@ export const computeFromInterval = (attrs: IJobParameters<any>): Date => {
   let error;
   if (typeof attrs.repeatInterval === "string") {
     try {
-      let cronTime = parseExpression(attrs.repeatInterval, cronOptions);
+      let cronTime = CronExpressionParser.parse(attrs.repeatInterval, cronOptions);
       let nextDate = cronTime.next().toDate();
       if (nextDate.valueOf() === lastRun.valueOf() || nextDate.valueOf() <= previousNextRunAt.valueOf()) {
         // Handle cronTime giving back the same date for the next run time
         cronOptions.currentDate = new Date(lastRun.valueOf() + 1000);
-        cronTime = parseExpression(attrs.repeatInterval, cronOptions);
+        cronTime = CronExpressionParser.parse(attrs.repeatInterval, cronOptions);
         nextDate = cronTime.next().toDate();
       }
 
