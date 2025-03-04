@@ -351,7 +351,7 @@ describe("Job", function () {
       it("fails the job", function () {
         strictEqual(
           job.attrs.failReason,
-          "failed to calculate nextRunAt due to invalid repeat interval (asd): AssertionError [ERR_ASSERTION]: Constraint error, got value 0 expected range 1-12"
+          "failed to calculate nextRunAt due to invalid repeat interval (asd): Error: Constraint error, got value 0 expected range 1-12"
         );
       });
     });
