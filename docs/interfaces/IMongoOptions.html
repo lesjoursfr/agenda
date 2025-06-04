@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="default" lang="en" data-base="..">
+<html class="default" lang="en" data-base="../">
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="x-ua-compatible" content="IE=edge" />
@@ -17,51 +17,56 @@
 		<script>
 			document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";
 			document.body.style.display = "none";
-			setTimeout(() => (app ? app.showPage() : document.body.style.removeProperty("display")), 500);
+			setTimeout(() => (window.app ? app.showPage() : document.body.style.removeProperty("display")), 500);
 		</script>
 		<header class="tsd-page-toolbar">
 			<div class="tsd-toolbar-contents container">
-				<div class="table-cell" id="tsd-search">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"
-							><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-								<use href="../assets/icons.svg#icon-search"></use></svg></label
-						><input type="text" id="tsd-search-field" aria-label="Search" />
+				<a href="../index.html" class="title">@lesjoursfr/agenda</a>
+				<div id="tsd-toolbar-links"></div>
+				<button id="tsd-search-trigger" class="tsd-widget" aria-label="Search">
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+						<use href="../assets/icons.svg#icon-search"></use>
+					</svg>
+				</button>
+				<dialog id="tsd-search" aria-label="Search">
+					<input
+						role="combobox"
+						id="tsd-search-input"
+						aria-controls="tsd-search-results"
+						aria-autocomplete="list"
+						aria-expanded="true"
+						autocapitalize="off"
+						autocomplete="off"
+						placeholder="Search the docs"
+						maxlength="100"
+					/>
+					<ul role="listbox" id="tsd-search-results"></ul>
+					<div id="tsd-search-status" aria-live="polite" aria-atomic="true">
+						<div>Preparing search index...</div>
 					</div>
-					<div class="field"><div id="tsd-toolbar-links"></div></div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="../index.html" class="title">@lesjoursfr/agenda</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"
-						><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-							<use href="../assets/icons.svg#icon-menu"></use></svg
-					></a>
-				</div>
+				</dialog>
+				<a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"
+					><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+						<use href="../assets/icons.svg#icon-menu"></use></svg
+				></a>
 			</div>
 		</header>
 		<div class="container container-main">
 			<div class="col-content">
 				<div class="tsd-page-title">
-					<ul class="tsd-breadcrumb">
-						<li><a href="../modules.html">@lesjoursfr/agenda</a></li>
-						<li><a href="IMongoOptions.html">IMongoOptions</a></li>
+					<ul class="tsd-breadcrumb" aria-label="Breadcrumb">
+						<li><a href="" aria-current="page">IMongoOptions</a></li>
 					</ul>
 					<h1>Interface IMongoOptions</h1>
 				</div>
 				<div class="tsd-signature">
 					<span class="tsd-signature-keyword">interface</span>
 					<span class="tsd-kind-interface">IMongoOptions</span> <span class="tsd-signature-symbol">{</span
-					><br />    <a class="tsd-kind-property" href="IMongoOptions.html#db">db</a
+					><br />    <a class="tsd-kind-property" href="#db">db</a
 					><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-symbol">{</span>
 					<span class="tsd-kind-property">collection</span><span class="tsd-signature-symbol">?:</span>
 					<span class="tsd-signature-type">string</span> <span class="tsd-signature-symbol">}</span
-					><span class="tsd-signature-symbol">;</span><br />    <a
-						class="tsd-kind-property"
-						href="IMongoOptions.html#mongo"
+					><span class="tsd-signature-symbol">;</span><br />    <a class="tsd-kind-property" href="#mongo"
 						>mongo</a
 					><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Db</span
 					><span class="tsd-signature-symbol">;</span><br /><span class="tsd-signature-symbol">}</span>
@@ -71,7 +76,7 @@
 						<li>
 							Defined in
 							<a
-								href="https://github.com/lesjoursfr/agenda/blob/9ae48beff994c80d0649a6b2d6dc5f27cbcbeff3/src/interfaces/db-options.ts#L11"
+								href="https://github.com/lesjoursfr/agenda/blob/d6068716793812c964870327da255ed20f7701c9/src/interfaces/db-options.ts#L11"
 								>src/interfaces/db-options.ts:11</a
 							>
 						</li>
@@ -81,29 +86,22 @@
 					<section class="tsd-panel tsd-index-panel">
 						<details class="tsd-index-content tsd-accordion" open>
 							<summary class="tsd-accordion-summary tsd-index-summary">
-								<h5
-									class="tsd-index-heading uppercase"
-									role="button"
-									aria-expanded="false"
-									tabindex="0"
-								>
-									<svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-										<use href="../assets/icons.svg#icon-chevronSmall"></use>
-									</svg>
-									Index
-								</h5>
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+									<use href="../assets/icons.svg#icon-chevronDown"></use>
+								</svg>
+								<h5 class="tsd-index-heading uppercase">Index</h5>
 							</summary>
 							<div class="tsd-accordion-details">
 								<section class="tsd-index-section">
 									<h3 class="tsd-index-heading">Properties</h3>
 									<div class="tsd-index-list">
-										<a href="IMongoOptions.html#db" class="tsd-index-link"
-											><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+										<a href="#db" class="tsd-index-link"
+											><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property">
 												<use href="../assets/icons.svg#icon-1024"></use></svg
 											><span>db?</span></a
 										>
-										<a href="IMongoOptions.html#mongo" class="tsd-index-link"
-											><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+										<a href="#mongo" class="tsd-index-link"
+											><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property">
 												<use href="../assets/icons.svg#icon-1024"></use></svg
 											><span>mongo</span></a
 										>
@@ -115,20 +113,18 @@
 				</section>
 				<details class="tsd-panel-group tsd-member-group tsd-accordion" open>
 					<summary class="tsd-accordion-summary" data-key="section-Properties">
-						<h2>
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-								<use href="../assets/icons.svg#icon-chevronDown"></use>
-							</svg>
-							Properties
-						</h2>
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+							<use href="../assets/icons.svg#icon-chevronDown"></use>
+						</svg>
+						<h2>Properties</h2>
 					</summary>
 					<section>
 						<section class="tsd-panel tsd-member">
-							<a id="db" class="tsd-anchor"></a>
-							<h3 class="tsd-anchor-link">
+							<h3 class="tsd-anchor-link" id="db">
 								<code class="tsd-tag">Optional</code><span>db</span
 								><a href="#db" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="../assets/icons.svg#icon-anchor"></use></svg
 								></a>
 							</h3>
 							<div class="tsd-signature">
@@ -144,7 +140,7 @@
 									<li>
 										Defined in
 										<a
-											href="https://github.com/lesjoursfr/agenda/blob/9ae48beff994c80d0649a6b2d6dc5f27cbcbeff3/src/interfaces/db-options.ts#L12"
+											href="https://github.com/lesjoursfr/agenda/blob/d6068716793812c964870327da255ed20f7701c9/src/interfaces/db-options.ts#L12"
 											>src/interfaces/db-options.ts:12</a
 										>
 									</li>
@@ -152,11 +148,11 @@
 							</aside>
 						</section>
 						<section class="tsd-panel tsd-member">
-							<a id="mongo" class="tsd-anchor"></a>
-							<h3 class="tsd-anchor-link">
+							<h3 class="tsd-anchor-link" id="mongo">
 								<span>mongo</span
 								><a href="#mongo" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="../assets/icons.svg#icon-anchor"></use></svg
 								></a>
 							</h3>
 							<div class="tsd-signature">
@@ -168,7 +164,7 @@
 									<li>
 										Defined in
 										<a
-											href="https://github.com/lesjoursfr/agenda/blob/9ae48beff994c80d0649a6b2d6dc5f27cbcbeff3/src/interfaces/db-options.ts#L15"
+											href="https://github.com/lesjoursfr/agenda/blob/d6068716793812c964870327da255ed20f7701c9/src/interfaces/db-options.ts#L15"
 											>src/interfaces/db-options.ts:15</a
 										>
 									</li>
@@ -183,11 +179,10 @@
 					<div class="tsd-navigation settings">
 						<details class="tsd-accordion">
 							<summary class="tsd-accordion-summary">
-								<h3>
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-										<use href="../assets/icons.svg#icon-chevronDown"></use></svg
-									>Settings
-								</h3>
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+									<use href="../assets/icons.svg#icon-chevronDown"></use>
+								</svg>
+								<h3>Settings</h3>
 							</summary>
 							<div class="tsd-accordion-details">
 								<div class="tsd-filter-visibility">
@@ -291,26 +286,25 @@
 					</div>
 					<details open class="tsd-accordion tsd-page-navigation">
 						<summary class="tsd-accordion-summary">
-							<h3>
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-									<use href="../assets/icons.svg#icon-chevronDown"></use></svg
-								>On This Page
-							</h3>
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+								<use href="../assets/icons.svg#icon-chevronDown"></use>
+							</svg>
+							<h3>On This Page</h3>
 						</summary>
 						<div class="tsd-accordion-details">
 							<details open class="tsd-accordion tsd-page-navigation-section">
 								<summary class="tsd-accordion-summary" data-key="section-Properties">
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
 										<use href="../assets/icons.svg#icon-chevronDown"></use></svg
 									>Properties
 								</summary>
 								<div>
-									<a href="#db" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+									<a href="#db"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property">
 											<use href="../assets/icons.svg#icon-1024"></use></svg
 										><span>db</span></a
-									><a href="#mongo" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+									><a href="#mongo"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property">
 											<use href="../assets/icons.svg#icon-1024"></use></svg
 										><span>mongo</span></a
 									>

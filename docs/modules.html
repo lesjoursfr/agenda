@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="default" lang="en" data-base=".">
+<html class="default" lang="en" data-base="./">
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="x-ua-compatible" content="IE=edge" />
@@ -17,69 +17,73 @@
 		<script>
 			document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";
 			document.body.style.display = "none";
-			setTimeout(() => (app ? app.showPage() : document.body.style.removeProperty("display")), 500);
+			setTimeout(() => (window.app ? app.showPage() : document.body.style.removeProperty("display")), 500);
 		</script>
 		<header class="tsd-page-toolbar">
 			<div class="tsd-toolbar-contents container">
-				<div class="table-cell" id="tsd-search">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"
-							><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-								<use href="assets/icons.svg#icon-search"></use></svg></label
-						><input type="text" id="tsd-search-field" aria-label="Search" />
+				<a href="index.html" class="title">@lesjoursfr/agenda</a>
+				<div id="tsd-toolbar-links"></div>
+				<button id="tsd-search-trigger" class="tsd-widget" aria-label="Search">
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+						<use href="assets/icons.svg#icon-search"></use>
+					</svg>
+				</button>
+				<dialog id="tsd-search" aria-label="Search">
+					<input
+						role="combobox"
+						id="tsd-search-input"
+						aria-controls="tsd-search-results"
+						aria-autocomplete="list"
+						aria-expanded="true"
+						autocapitalize="off"
+						autocomplete="off"
+						placeholder="Search the docs"
+						maxlength="100"
+					/>
+					<ul role="listbox" id="tsd-search-results"></ul>
+					<div id="tsd-search-status" aria-live="polite" aria-atomic="true">
+						<div>Preparing search index...</div>
 					</div>
-					<div class="field"><div id="tsd-toolbar-links"></div></div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="index.html" class="title">@lesjoursfr/agenda</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"
-						><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-							<use href="assets/icons.svg#icon-menu"></use></svg
-					></a>
-				</div>
+				</dialog>
+				<a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"
+					><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+						<use href="assets/icons.svg#icon-menu"></use></svg
+				></a>
 			</div>
 		</header>
 		<div class="container container-main">
 			<div class="col-content">
 				<div class="tsd-page-title">
-					<ul class="tsd-breadcrumb">
-						<li><a href="modules.html">@lesjoursfr/agenda</a></li>
-					</ul>
+					<ul class="tsd-breadcrumb" aria-label="Breadcrumb"></ul>
 					<h1>@lesjoursfr/agenda</h1>
 				</div>
 				<details class="tsd-panel-group tsd-member-group tsd-accordion" open>
 					<summary class="tsd-accordion-summary" data-key="section-Classes">
-						<h2>
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-								<use href="assets/icons.svg#icon-chevronDown"></use>
-							</svg>
-							Classes
-						</h2>
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+							<use href="assets/icons.svg#icon-chevronDown"></use>
+						</svg>
+						<h2>Classes</h2>
 					</summary>
 					<dl class="tsd-member-summaries">
-						<dt class="tsd-member-summary">
-							<a id="agenda" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="agenda">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Class">
 									<use href="assets/icons.svg#icon-128"></use></svg
 								><a href="classes/Agenda.html">Agenda</a
 								><a href="#agenda" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
-						<dt class="tsd-member-summary">
-							<a id="job" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="job">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Class">
 									<use href="assets/icons.svg#icon-128"></use></svg
 								><a href="classes/Job.html">Job</a
 								><a href="#job" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
@@ -87,99 +91,97 @@
 				</details>
 				<details class="tsd-panel-group tsd-member-group tsd-accordion" open>
 					<summary class="tsd-accordion-summary" data-key="section-Interfaces">
-						<h2>
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-								<use href="assets/icons.svg#icon-chevronDown"></use>
-							</svg>
-							Interfaces
-						</h2>
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+							<use href="assets/icons.svg#icon-chevronDown"></use>
+						</svg>
+						<h2>Interfaces</h2>
 					</summary>
 					<dl class="tsd-member-summaries">
-						<dt class="tsd-member-summary">
-							<a id="iagendaconfig" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="iagendaconfig">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 									<use href="assets/icons.svg#icon-256"></use></svg
 								><a href="interfaces/IAgendaConfig.html">IAgendaConfig</a
 								><a href="#iagendaconfig" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
-						<dt class="tsd-member-summary">
-							<a id="iagendajobstatus" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="iagendajobstatus">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 									<use href="assets/icons.svg#icon-256"></use></svg
 								><a href="interfaces/IAgendaJobStatus.html">IAgendaJobStatus</a
 								><a href="#iagendajobstatus" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
-						<dt class="tsd-member-summary">
-							<a id="iagendastatus" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="iagendastatus">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 									<use href="assets/icons.svg#icon-256"></use></svg
 								><a href="interfaces/IAgendaStatus.html">IAgendaStatus</a
 								><a href="#iagendastatus" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
-						<dt class="tsd-member-summary">
-							<a id="idatabaseoptions" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="idatabaseoptions">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 									<use href="assets/icons.svg#icon-256"></use></svg
 								><a href="interfaces/IDatabaseOptions.html">IDatabaseOptions</a
 								><a href="#idatabaseoptions" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
-						<dt class="tsd-member-summary">
-							<a id="idbconfig" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="idbconfig">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 									<use href="assets/icons.svg#icon-256"></use></svg
 								><a href="interfaces/IDbConfig.html">IDbConfig</a
 								><a href="#idbconfig" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
-						<dt class="tsd-member-summary">
-							<a id="ijobdefinition" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="ijobdefinition">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 									<use href="assets/icons.svg#icon-256"></use></svg
 								><a href="interfaces/IJobDefinition.html">IJobDefinition</a
 								><a href="#ijobdefinition" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
-						<dt class="tsd-member-summary">
-							<a id="ijobparameters" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="ijobparameters">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 									<use href="assets/icons.svg#icon-256"></use></svg
 								><a href="interfaces/IJobParameters.html">IJobParameters</a
 								><a href="#ijobparameters" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
-						<dt class="tsd-member-summary">
-							<a id="imongooptions" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="imongooptions">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 									<use href="assets/icons.svg#icon-256"></use></svg
 								><a href="interfaces/IMongoOptions.html">IMongoOptions</a
 								><a href="#imongooptions" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
@@ -187,44 +189,42 @@
 				</details>
 				<details class="tsd-panel-group tsd-member-group tsd-accordion" open>
 					<summary class="tsd-accordion-summary" data-key="section-Type Aliases">
-						<h2>
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-								<use href="assets/icons.svg#icon-chevronDown"></use>
-							</svg>
-							Type Aliases
-						</h2>
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+							<use href="assets/icons.svg#icon-chevronDown"></use>
+						</svg>
+						<h2>Type Aliases</h2>
 					</summary>
 					<dl class="tsd-member-summaries">
-						<dt class="tsd-member-summary">
-							<a id="definitionprocessor" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="definitionprocessor">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Type Alias">
 									<use href="assets/icons.svg#icon-2097152"></use></svg
 								><a href="types/DefinitionProcessor.html">DefinitionProcessor</a
 								><a href="#definitionprocessor" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
-						<dt class="tsd-member-summary">
-							<a id="jobwithid" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="jobwithid">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Type Alias">
 									<use href="assets/icons.svg#icon-2097152"></use></svg
 								><a href="types/JobWithId.html">JobWithId</a
 								><a href="#jobwithid" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
-						<dt class="tsd-member-summary">
-							<a id="tjobdatefield" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="tjobdatefield">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Type Alias">
 									<use href="assets/icons.svg#icon-2097152"></use></svg
 								><a href="types/TJobDatefield.html">TJobDatefield</a
 								><a href="#tjobdatefield" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
@@ -232,22 +232,20 @@
 				</details>
 				<details class="tsd-panel-group tsd-member-group tsd-accordion" open>
 					<summary class="tsd-accordion-summary" data-key="section-Variables">
-						<h2>
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-								<use href="assets/icons.svg#icon-chevronDown"></use>
-							</svg>
-							Variables
-						</h2>
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+							<use href="assets/icons.svg#icon-chevronDown"></use>
+						</svg>
+						<h2>Variables</h2>
 					</summary>
 					<dl class="tsd-member-summaries">
-						<dt class="tsd-member-summary">
-							<a id="datefields" class="tsd-anchor"></a
-							><span class="tsd-member-summary-name"
-								><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+						<dt class="tsd-member-summary" id="datefields">
+							<span class="tsd-member-summary-name"
+								><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Variable">
 									<use href="assets/icons.svg#icon-32"></use></svg
 								><a href="variables/datefields.html">datefields</a
 								><a href="#datefields" aria-label="Permalink" class="tsd-anchor-icon"
-									><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a
+									><svg viewBox="0 0 24 24" aria-hidden="true">
+										<use href="assets/icons.svg#icon-anchor"></use></svg></a
 							></span>
 						</dt>
 						<dd class="tsd-member-summary"></dd>
@@ -259,11 +257,10 @@
 					<div class="tsd-navigation settings">
 						<details class="tsd-accordion">
 							<summary class="tsd-accordion-summary">
-								<h3>
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-										<use href="assets/icons.svg#icon-chevronDown"></use></svg
-									>Settings
-								</h3>
+								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+									<use href="assets/icons.svg#icon-chevronDown"></use>
+								</svg>
+								<h3>Settings</h3>
 							</summary>
 							<div class="tsd-accordion-details">
 								<div class="tsd-filter-visibility">
@@ -367,26 +364,25 @@
 					</div>
 					<details open class="tsd-accordion tsd-page-navigation">
 						<summary class="tsd-accordion-summary">
-							<h3>
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-									<use href="assets/icons.svg#icon-chevronDown"></use></svg
-								>On This Page
-							</h3>
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+								<use href="assets/icons.svg#icon-chevronDown"></use>
+							</svg>
+							<h3>On This Page</h3>
 						</summary>
 						<div class="tsd-accordion-details">
 							<details open class="tsd-accordion tsd-page-navigation-section">
 								<summary class="tsd-accordion-summary" data-key="section-Classes">
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
 										<use href="assets/icons.svg#icon-chevronDown"></use></svg
 									>Classes
 								</summary>
 								<div>
-									<a href="#agenda" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+									<a href="#agenda"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Class">
 											<use href="assets/icons.svg#icon-128"></use></svg
 										><span>Agenda</span></a
-									><a href="#job" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+									><a href="#job"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Class">
 											<use href="assets/icons.svg#icon-128"></use></svg
 										><span>Job</span></a
 									>
@@ -394,77 +390,77 @@
 							</details>
 							<details open class="tsd-accordion tsd-page-navigation-section">
 								<summary class="tsd-accordion-summary" data-key="section-Interfaces">
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
 										<use href="assets/icons.svg#icon-chevronDown"></use></svg
 									>Interfaces
 								</summary>
 								<div>
-									<a href="#iagendaconfig" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+									<a href="#iagendaconfig"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 											<use href="assets/icons.svg#icon-256"></use></svg
-										><span>IAgenda<wbr />Config</span></a
-									><a href="#iagendajobstatus" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+										><span>I<wbr />Agenda<wbr />Config</span></a
+									><a href="#iagendajobstatus"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 											<use href="assets/icons.svg#icon-256"></use></svg
-										><span>IAgenda<wbr />Job<wbr />Status</span></a
-									><a href="#iagendastatus" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+										><span>I<wbr />Agenda<wbr />Job<wbr />Status</span></a
+									><a href="#iagendastatus"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 											<use href="assets/icons.svg#icon-256"></use></svg
-										><span>IAgenda<wbr />Status</span></a
-									><a href="#idatabaseoptions" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+										><span>I<wbr />Agenda<wbr />Status</span></a
+									><a href="#idatabaseoptions"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 											<use href="assets/icons.svg#icon-256"></use></svg
-										><span>IDatabase<wbr />Options</span></a
-									><a href="#idbconfig" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+										><span>I<wbr />Database<wbr />Options</span></a
+									><a href="#idbconfig"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 											<use href="assets/icons.svg#icon-256"></use></svg
-										><span>IDb<wbr />Config</span></a
-									><a href="#ijobdefinition" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+										><span>I<wbr />Db<wbr />Config</span></a
+									><a href="#ijobdefinition"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 											<use href="assets/icons.svg#icon-256"></use></svg
-										><span>IJob<wbr />Definition</span></a
-									><a href="#ijobparameters" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+										><span>I<wbr />Job<wbr />Definition</span></a
+									><a href="#ijobparameters"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 											<use href="assets/icons.svg#icon-256"></use></svg
-										><span>IJob<wbr />Parameters</span></a
-									><a href="#imongooptions" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+										><span>I<wbr />Job<wbr />Parameters</span></a
+									><a href="#imongooptions"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Interface">
 											<use href="assets/icons.svg#icon-256"></use></svg
-										><span>IMongo<wbr />Options</span></a
+										><span>I<wbr />Mongo<wbr />Options</span></a
 									>
 								</div>
 							</details>
 							<details open class="tsd-accordion tsd-page-navigation-section">
 								<summary class="tsd-accordion-summary" data-key="section-Type Aliases">
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
 										<use href="assets/icons.svg#icon-chevronDown"></use></svg
 									>Type Aliases
 								</summary>
 								<div>
-									<a href="#definitionprocessor" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+									<a href="#definitionprocessor"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Type Alias">
 											<use href="assets/icons.svg#icon-2097152"></use></svg
 										><span>Definition<wbr />Processor</span></a
-									><a href="#jobwithid" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+									><a href="#jobwithid"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Type Alias">
 											<use href="assets/icons.svg#icon-2097152"></use></svg
 										><span>Job<wbr />With<wbr />Id</span></a
-									><a href="#tjobdatefield" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+									><a href="#tjobdatefield"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Type Alias">
 											<use href="assets/icons.svg#icon-2097152"></use></svg
-										><span>TJob<wbr />Datefield</span></a
+										><span>T<wbr />Job<wbr />Datefield</span></a
 									>
 								</div>
 							</details>
 							<details open class="tsd-accordion tsd-page-navigation-section">
 								<summary class="tsd-accordion-summary" data-key="section-Variables">
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
 										<use href="assets/icons.svg#icon-chevronDown"></use></svg
 									>Variables
 								</summary>
 								<div>
-									<a href="#datefields" class=""
-										><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+									<a href="#datefields"
+										><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Variable">
 											<use href="assets/icons.svg#icon-32"></use></svg
 										><span>datefields</span></a
 									>
