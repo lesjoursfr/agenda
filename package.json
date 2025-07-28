@@ -51,14 +51,14 @@
 		"mongodb": "~6.18.0"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.31.0",
+		"@eslint/js": "^9.32.0",
 		"@tsconfig/node20": "^20.1.6",
 		"@types/debug": "^4.1.12",
 		"@types/luxon": "^3.6.2",
 		"@types/mocha": "^10.0.10",
 		"@types/node": "^22.16.5",
 		"@types/sinon": "^17.0.4",
-		"eslint": "^9.31.0",
+		"eslint": "^9.32.0",
 		"eslint-config-prettier": "^10.1.8",
 		"globals": "^16.3.0",
 		"mocha": "^11.7.1",
@@ -67,7 +67,7 @@
 		"prettier": "^3.6.2",
 		"sinon": "^20.0.0",
 		"ts-node": "^10.9.2",
-		"typedoc": "^0.28.7",
+		"typedoc": "^0.28.8",
 		"typescript": "^5.8.3",
 		"typescript-eslint": "^8.38.0"
 	},
