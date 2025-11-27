@@ -1,6 +1,6 @@
 {
 	"name": "@lesjoursfr/agenda",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "Light weight job scheduler for Node.js",
 	"license": "MIT",
 	"repository": {
@@ -43,8 +43,8 @@
 		"typedoc": "typedoc src/index.ts --out ./docs && prettier --write ./docs --ignore-path .gitignore"
 	},
 	"dependencies": {
-		"@lesjoursfr/date": "^2.0.0",
-		"@lesjoursfr/human-interval": "^2.0.0",
+		"@lesjoursfr/date": "^2.0.1",
+		"@lesjoursfr/human-interval": "^2.0.1",
 		"cron-parser": "^5.4.0",
 		"debug": "^4.4.3",
 		"luxon": "^3.7.2",
