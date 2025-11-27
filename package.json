@@ -7,9 +7,9 @@
 		"type": "git",
 		"url": "git+https://github.com/lesjoursfr/agenda.git"
 	},
-	"homepage": "https://github.com/lesjoursfr/audio-waveform#readme",
+	"homepage": "https://github.com/lesjoursfr/agenda#readme",
 	"bugs": {
-		"url": "https://github.com/lesjoursfr/audio-waveform/issues"
+		"url": "https://github.com/lesjoursfr/agenda/issues"
 	},
 	"publishConfig": {
 		"access": "public"
