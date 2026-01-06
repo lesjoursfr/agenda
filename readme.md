@@ -14,7 +14,7 @@ This was originally a fork of agenda.js,
 it differs from the original version in following points:
 
 - Complete rewrite in Typescript (fully typed!)
-- [mongodb@6](https://www.npmjs.com/package/mongodb) driver
+- [mongodb@7](https://www.npmjs.com/package/mongodb) driver
 - Supports mongoDB sharding by name
 - touch() can have an optional progress parameter (0-100)
 - Bugfixes and improvements for locking & job processing (concurrency, lockLimit,..)
