@@ -45,7 +45,7 @@
 	"dependencies": {
 		"@lesjoursfr/date": "^2.0.3",
 		"@lesjoursfr/human-interval": "^2.0.3",
-		"cron-parser": "^5.4.0",
+		"cron-parser": "^5.5.0",
 		"debug": "^4.4.3",
 		"luxon": "^3.7.2",
 		"mongodb": "~7.0"
@@ -56,19 +56,19 @@
 		"@types/debug": "^4.1.12",
 		"@types/luxon": "^3.7.1",
 		"@types/mocha": "^10.0.10",
-		"@types/node": "^24.10.4",
+		"@types/node": "^24.10.9",
 		"@types/sinon": "^21.0.0",
 		"eslint": "^9.39.2",
 		"eslint-config-prettier": "^10.1.8",
-		"globals": "^17.0.0",
+		"globals": "^17.1.0",
 		"mocha": "^11.7.5",
 		"mongodb-memory-server": "^11.0.1",
-		"prettier": "^3.7.4",
+		"prettier": "^3.8.1",
 		"sinon": "^21.0.1",
 		"ts-node": "^10.9.2",
-		"typedoc": "^0.28.15",
+		"typedoc": "^0.28.16",
 		"typescript": "^5.9.3",
-		"typescript-eslint": "^8.52.0"
+		"typescript-eslint": "^8.53.1"
 	},
 	"dependenciesMeta": {
 		"mongodb-memory-server": {
