@@ -48,7 +48,7 @@
 		"cron-parser": "^5.5.0",
 		"debug": "^4.4.3",
 		"luxon": "^3.7.2",
-		"mongodb": "~7.0"
+		"mongodb": "~7.1.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "9.39.2",
