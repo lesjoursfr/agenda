@@ -48,17 +48,17 @@
 		"cron-parser": "^5.5.0",
 		"debug": "^4.4.3",
 		"luxon": "^3.7.2",
-		"mongodb": "~7.1.0"
+		"mongodb": "~7.1.1"
 	},
 	"devDependencies": {
 		"@eslint/js": "10.0.1",
 		"@tsconfig/node22": "22.0.5",
-		"@types/debug": "4.1.12",
+		"@types/debug": "4.1.13",
 		"@types/luxon": "3.7.1",
 		"@types/mocha": "10.0.10",
 		"@types/node": "24.12.0",
 		"@types/sinon": "21.0.0",
-		"eslint": "10.0.3",
+		"eslint": "10.1.0",
 		"eslint-config-prettier": "10.1.8",
 		"globals": "17.4.0",
 		"mocha": "11.7.5",
@@ -66,14 +66,14 @@
 		"prettier": "3.8.1",
 		"sinon": "21.0.3",
 		"ts-node": "10.9.2",
-		"typedoc": "0.28.17",
+		"typedoc": "0.28.18",
 		"typescript": "5.9.3",
-		"typescript-eslint": "8.57.1"
+		"typescript-eslint": "8.57.2"
 	},
 	"dependenciesMeta": {
 		"mongodb-memory-server": {
 			"built": true
 		}
 	},
-	"packageManager": "yarn@4.12.0"
+	"packageManager": "yarn@4.13.0"
 }
