@@ -4,16 +4,18 @@ import { deepStrictEqual, fail, notStrictEqual, strictEqual } from "node:assert"
 import cp from "node:child_process";
 import path from "node:path";
 import { setTimeout as delay } from "node:timers/promises";
+import { fileURLToPath } from "node:url";
 import * as sinon from "sinon";
-import { Agenda } from "../src/index";
-import { Job } from "../src/job";
-import someJobDefinition from "./fixtures/some-job-definition";
-import { IMockMongo, mockMongo } from "./helpers/mock-mongodb";
+import { Agenda } from "../src/index.js";
+import { Job } from "../src/job.js";
+import someJobDefinition from "./fixtures/some-job-definition.js";
+import { IMockMongo, mockMongo } from "./helpers/mock-mongodb.js";
 
 // Slow timeouts for Travis
 const jobTimeout = 500;
 const jobType = "do work";
 const jobProcessor = function () {};
+const dirname = fileURLToPath(new URL(".", import.meta.url));
 
 describe("Job", function () {
   // Mocked MongoDB
@@ -1352,9 +1354,9 @@ describe("Job", function () {
         };
 
         const startService = function () {
-          const serverPath = path.join(__dirname, "fixtures", "agenda-instance.ts");
+          const serverPath = path.join(dirname, "fixtures", "agenda-instance.ts");
           const n = cp.fork(serverPath, [mongoCfg, "daily"], {
-            execArgv: ["-r", "ts-node/register"],
+            env: { NODE_OPTIONS: "--loader=ts-node/esm" },
           });
 
           n.on("message", receiveMessage);
@@ -1365,9 +1367,9 @@ describe("Job", function () {
       });
 
       it("Should properly run jobs when defined via an array", (done) => {
-        const serverPath = path.join(__dirname, "fixtures", "agenda-instance.ts");
+        const serverPath = path.join(dirname, "fixtures", "agenda-instance.ts");
         const n = cp.fork(serverPath, [mongoCfg, "daily-array"], {
-          execArgv: ["-r", "ts-node/register"],
+          env: { NODE_OPTIONS: "--loader=ts-node/esm" },
         });
 
         let ran1 = false;
@@ -1450,9 +1452,9 @@ describe("Job", function () {
         };
 
         const startService = function () {
-          const serverPath = path.join(__dirname, "fixtures", "agenda-instance.ts");
+          const serverPath = path.join(dirname, "fixtures", "agenda-instance.ts");
           const n = cp.fork(serverPath, [mongoCfg, "define-future-job"], {
-            execArgv: ["-r", "ts-node/register"],
+            env: { NODE_OPTIONS: "--loader=ts-node/esm" },
           });
 
           n.on("message", receiveMessage);
@@ -1477,9 +1479,9 @@ describe("Job", function () {
         };
 
         const startService = function () {
-          const serverPath = path.join(__dirname, "fixtures", "agenda-instance.ts");
+          const serverPath = path.join(dirname, "fixtures", "agenda-instance.ts");
           const n = cp.fork(serverPath, [mongoCfg, "define-past-due-job"], {
-            execArgv: ["-r", "ts-node/register"],
+            env: { NODE_OPTIONS: "--loader=ts-node/esm" },
           });
 
           n.on("message", receiveMessage);
@@ -1490,9 +1492,9 @@ describe("Job", function () {
       });
 
       it("Should schedule using array of names", (done) => {
-        const serverPath = path.join(__dirname, "fixtures", "agenda-instance.ts");
+        const serverPath = path.join(dirname, "fixtures", "agenda-instance.ts");
         const n = cp.fork(serverPath, [mongoCfg, "schedule-array"], {
-          execArgv: ["-r", "ts-node/register"],
+          env: { NODE_OPTIONS: "--loader=ts-node/esm" },
         });
 
         let ran1 = false;
@@ -1544,9 +1546,9 @@ describe("Job", function () {
           return done(new Error("Job did not immediately run!"));
         };
 
-        const serverPath = path.join(__dirname, "fixtures", "agenda-instance.ts");
+        const serverPath = path.join(dirname, "fixtures", "agenda-instance.ts");
         const n = cp.fork(serverPath, [mongoCfg, "now"], {
-          execArgv: ["-r", "ts-node/register"],
+          env: { NODE_OPTIONS: "--loader=ts-node/esm" },
         });
 
         n.on("message", receiveMessage);
@@ -1658,7 +1660,7 @@ describe("Job", function () {
           path: "./tests/helpers/fork-helper.ts",
           options: {
             env: { DB_CONNECTION: mongoCfg },
-            execArgv: ["-r", "ts-node/register"],
+            execArgv: ["--loader", "ts-node/esm"],
           },
         },
       });
@@ -1702,7 +1704,7 @@ describe("Job", function () {
           path: "./tests/helpers/fork-helper.ts",
           options: {
             env: { DB_CONNECTION: mongoCfg },
-            execArgv: ["-r", "ts-node/register"],
+            execArgv: ["--loader", "ts-node/esm"],
           },
         },
       });
@@ -1746,7 +1748,7 @@ describe("Job", function () {
           path: "./tests/helpers/fork-helper.ts",
           options: {
             env: { DB_CONNECTION: mongoCfg },
-            execArgv: ["-r", "ts-node/register"],
+            execArgv: ["--loader", "ts-node/esm"],
           },
         },
       });
@@ -1791,7 +1793,7 @@ describe("Job", function () {
           path: "./tests/helpers/fork-helper.ts",
           options: {
             env: { DB_CONNECTION: mongoCfg },
-            execArgv: ["-r", "ts-node/register"],
+            execArgv: ["--loader", "ts-node/esm"],
           },
         },
         defaultLockLifetime: 1000,

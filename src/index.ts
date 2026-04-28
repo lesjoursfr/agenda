@@ -11,11 +11,11 @@ import type {
   IJobDefinition,
   IJobParameters,
   IMongoOptions,
-} from "./interfaces/index";
-import { Job, JobWithId } from "./job";
-import { JobDbRepository } from "./job-db-repository";
-import { JobProcessor } from "./job-processor";
-import { calculateProcessEvery, getCallerFilePath, JobPriority, parsePriority } from "./utils/index";
+} from "./interfaces/index.js";
+import { JobDbRepository } from "./job-db-repository.js";
+import { JobProcessor } from "./job-processor.js";
+import { Job, JobWithId } from "./job.js";
+import { calculateProcessEvery, getCallerFilePath, JobPriority, parsePriority } from "./utils/index.js";
 
 const log = debug("agenda");
 
@@ -551,5 +551,5 @@ export class Agenda extends EventEmitter {
   }
 }
 
-export * from "./interfaces/index";
-export * from "./job";
+export * from "./interfaces/index.js";
+export * from "./job.js";

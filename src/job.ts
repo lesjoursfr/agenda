@@ -2,10 +2,10 @@ import date from "@lesjoursfr/date";
 import debug from "debug";
 import { ObjectId } from "mongodb";
 import { ChildProcess, fork } from "node:child_process";
-import type { Agenda } from "./index";
-import type { DefinitionProcessor } from "./interfaces/index";
-import { datefields, IJobParameters, TJobDatefield } from "./interfaces/index";
-import { computeFromInterval, computeFromRepeatAt, JobPriority, parsePriority } from "./utils/index";
+import type { Agenda } from "./index.js";
+import type { DefinitionProcessor } from "./interfaces/index.js";
+import { datefields, IJobParameters, TJobDatefield } from "./interfaces/index.js";
+import { computeFromInterval, computeFromRepeatAt, JobPriority, parsePriority } from "./utils/index.js";
 
 const log = debug("agenda:job");
 

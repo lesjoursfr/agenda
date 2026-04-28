@@ -27,10 +27,7 @@
 	],
 	"main": "./lib/index.js",
 	"types": "./lib/index.d.ts",
-	"files": [
-		"lib/**/*",
-		"src/**/*"
-	],
+	"type": "module",
 	"scripts": {
 		"freshlock": "rm -rf node_modules/ && rm .yarn/install-state.gz && rm yarn.lock && yarn",
 		"check-lint": "eslint",
@@ -39,16 +36,16 @@
 		"lint": "eslint --fix",
 		"format": "prettier --write .",
 		"build": "tsc -p tsconfig.build.json",
-		"test": "mocha",
+		"test": "NODE_OPTIONS='--loader=ts-node/esm' mocha",
 		"typedoc": "typedoc src/index.ts --out ./docs && prettier --write ./docs --ignore-path .gitignore"
 	},
 	"dependencies": {
-		"@lesjoursfr/date": "^2.0.4",
-		"@lesjoursfr/human-interval": "^2.0.4",
+		"@lesjoursfr/date": "^3.0.0",
+		"@lesjoursfr/human-interval": "^3.0.0",
 		"cron-parser": "^5.5.0",
 		"debug": "^4.4.3",
 		"luxon": "^3.7.2",
-		"mongodb": "~7.1.1"
+		"mongodb": "~7.2.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "10.0.1",
@@ -58,7 +55,7 @@
 		"@types/mocha": "10.0.10",
 		"@types/node": "24.12.2",
 		"@types/sinon": "21.0.1",
-		"eslint": "10.2.0",
+		"eslint": "10.2.1",
 		"eslint-config-prettier": "10.1.8",
 		"globals": "17.5.0",
 		"mocha": "11.7.5",
@@ -75,5 +72,5 @@
 			"built": true
 		}
 	},
-	"packageManager": "yarn@4.14.0"
+	"packageManager": "yarn@4.14.1"
 }

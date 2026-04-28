@@ -3,8 +3,8 @@ import humanInterval from "@lesjoursfr/human-interval";
 import { CronExpressionParser } from "cron-parser";
 import debug from "debug";
 import { DateTime } from "luxon";
-import type { IJobParameters } from "../interfaces";
-import { isValidDate } from "./is-valid-date";
+import type { IJobParameters } from "../interfaces/index.js";
+import { isValidDate } from "./is-valid-date.js";
 
 const log = debug("agenda:nextRunAt");
 

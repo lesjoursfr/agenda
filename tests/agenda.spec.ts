@@ -1,10 +1,10 @@
 import { Db } from "mongodb";
 import { deepStrictEqual, notStrictEqual, strictEqual } from "node:assert";
 import { setTimeout as delay } from "node:timers/promises";
-import { Agenda } from "../src/index";
-import { Job } from "../src/job";
-import { hasMongoProtocol } from "../src/utils/has-mongo-protocol";
-import { IMockMongo, mockMongo } from "./helpers/mock-mongodb";
+import { Agenda } from "../src/index.js";
+import { Job } from "../src/job.js";
+import { hasMongoProtocol } from "../src/utils/has-mongo-protocol.js";
+import { IMockMongo, mockMongo } from "./helpers/mock-mongodb.js";
 
 // Slow timeouts for Travis
 const jobTimeout = 500;

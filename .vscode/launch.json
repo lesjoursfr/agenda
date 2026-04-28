@@ -11,7 +11,10 @@
 			"runtimeExecutable": "${workspaceFolder}/node_modules/.bin/mocha",
 			"runtimeArgs": [],
 			"outputCapture": "std",
-			"skipFiles": ["<node_internals>/**/*.js"]
+			"skipFiles": ["<node_internals>/**/*.js"],
+			"env": {
+				"NODE_OPTIONS": "--loader=ts-node/esm"
+			}
 		},
 		{
 			"type": "node",
@@ -20,7 +23,22 @@
 			"runtimeExecutable": "${workspaceFolder}/node_modules/.bin/mocha",
 			"runtimeArgs": ["--grep", "/job fork mode/i"],
 			"outputCapture": "std",
-			"skipFiles": ["<node_internals>/**/*.js"]
+			"skipFiles": ["<node_internals>/**/*.js"],
+			"env": {
+				"NODE_OPTIONS": "--loader=ts-node/esm"
+			}
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Tests Integration",
+			"runtimeExecutable": "${workspaceFolder}/node_modules/.bin/mocha",
+			"runtimeArgs": ["--grep", "/Integration Tests/i"],
+			"outputCapture": "std",
+			"skipFiles": ["<node_internals>/**/*.js"],
+			"env": {
+				"NODE_OPTIONS": "--loader=ts-node/esm"
+			}
 		}
 	]
 }

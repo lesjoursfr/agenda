@@ -1,5 +1,5 @@
-import type { IJobDefinition } from "./job-definition";
-import type { IJobParameters } from "./job-parameters";
+import type { IJobDefinition } from "./job-definition.js";
+import type { IJobParameters } from "./job-parameters.js";
 
 export interface IAgendaJobStatus {
   [name: string]: {

@@ -1,4 +1,4 @@
-import { Agenda } from "../../src/index";
+import { Agenda } from "../../src/index.js";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function isCancelMessage(message: any): message is { type: "cancel"; error: string } {

@@ -1,9 +1,9 @@
 import debug from "debug";
 import { Collection, Db, Filter, MongoClient, MongoClientOptions, ObjectId, Sort, UpdateFilter } from "mongodb";
-import type { Agenda } from "./index";
-import type { IDatabaseOptions, IDbConfig, IJobParameters, IMongoOptions } from "./interfaces/index";
-import type { Job, JobWithId } from "./job";
-import { hasMongoProtocol } from "./utils/index";
+import type { Agenda } from "./index.js";
+import type { IDatabaseOptions, IDbConfig, IJobParameters, IMongoOptions } from "./interfaces/index.js";
+import type { Job, JobWithId } from "./job.js";
+import { hasMongoProtocol } from "./utils/index.js";
 
 const log = debug("agenda:db");
 

@@ -1,4 +1,4 @@
-import { Agenda } from "../../src/index";
+import { Agenda } from "../../src/index.js";
 
 export default {
   none: function (): void {},

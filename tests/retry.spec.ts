@@ -1,7 +1,7 @@
 import { Db } from "mongodb";
 import { setTimeout as delay } from "node:timers/promises";
-import { Agenda, Job } from "../src/index";
-import { IMockMongo, mockMongo } from "./helpers/mock-mongodb";
+import { Agenda, Job } from "../src/index.js";
+import { IMockMongo, mockMongo } from "./helpers/mock-mongodb.js";
 
 const jobType = "do work";
 const jobProcessor = function () {};

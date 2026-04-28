@@ -1,9 +1,9 @@
 import debug from "debug";
-import { version as agendaVersion } from "../package.json";
-import type { Agenda, JobWithId } from "./index";
-import type { IAgendaJobStatus, IAgendaStatus, IJobDefinition, IJobParameters } from "./interfaces/index";
-import { Job } from "./job";
-import { JobProcessingQueue } from "./job-processing-queue";
+import pkgJson from "../package.json" with { type: "json" };
+import type { Agenda, JobWithId } from "./index.js";
+import type { IAgendaJobStatus, IAgendaStatus, IJobDefinition, IJobParameters } from "./interfaces/index.js";
+import { JobProcessingQueue } from "./job-processing-queue.js";
+import { Job } from "./job.js";
 
 const log = debug("agenda:jobProcessor");
 
@@ -32,7 +32,7 @@ export class JobProcessor {
     }, {} as IAgendaJobStatus);
 
     return {
-      version: agendaVersion,
+      version: pkgJson.version,
       queueName: this.agenda.attrs.name,
       totalQueueSizeDB: await this.agenda.db.getQueueSize(),
       internal: {

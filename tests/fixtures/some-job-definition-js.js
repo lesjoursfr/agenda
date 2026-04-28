@@ -1,4 +1,4 @@
-module.exports = (agenda, _definitionOnly = false) => {
+export default (agenda, _definitionOnly = false) => {
   agenda.define("some job", async (job) => {
     console.log("HELLO from a sub worker");
     if (job.attrs.data?.failIt === "error") {

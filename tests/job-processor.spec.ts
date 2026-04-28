@@ -1,7 +1,7 @@
 import { Db } from "mongodb";
 import { fail, match, notStrictEqual, strictEqual } from "node:assert";
-import { Agenda } from "../src/index";
-import { IMockMongo, mockMongo } from "./helpers/mock-mongodb";
+import { Agenda } from "../src/index.js";
+import { IMockMongo, mockMongo } from "./helpers/mock-mongodb.js";
 
 describe("JobProcessor", function () {
   // Mocked MongoDB

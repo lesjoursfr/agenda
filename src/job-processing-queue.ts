@@ -1,6 +1,6 @@
-import type { Agenda } from "./index";
-import type { IJobParameters } from "./interfaces/index";
-import type { Job, JobWithId } from "./job";
+import type { Agenda } from "./index.js";
+import type { IJobParameters } from "./interfaces/index.js";
+import type { Job, JobWithId } from "./job.js";
 
 /**
  * @class
